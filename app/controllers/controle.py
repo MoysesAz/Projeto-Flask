@@ -17,9 +17,9 @@ def Login():
             if not user:
                 status_index = 'Usuário não cadastrados'
                 return render_template('index.html', status_index=status_index)
-            elif (password == user.password):
+            elif password == user.password:
                 return f"{username} é um cadastrado!!!"
-            else:
+            elif password != user.password:
                 status_index = 'Password inválido'
                 return render_template('index.html', status_index=status_index)
         except NameError:
