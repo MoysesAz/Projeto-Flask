@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Arquivos estaticos</title>
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper">
+      <a class="brand-logo" href="http://127.0.0.1:5000/">Home</a>
+      <ul class="right hide-on-med-and-down" id="nav-mobile">
+        <li><a href="http://127.0.0.1:5000/cadastrar">Cadastro</a></li>
+        <li><a href="http://127.0.0.1:5000/tabela">Tabela</a></li>
+      </ul>
+    </div>
+</nav>
+
+<div class="row">
+    <form class="col s12" action="/login" method="post">
+        <h1>Login</h1>
+        <div class="col s6">
+            <input class="materialize-textarea" type="text" name="username" id="username" placeholder="Login" required>
+            <input class="materialize-textarea" type="password" name="password" id="password" placeholder="Senha" required><br><br>
+                {{ status_index }}<br><br>
+            <button class="waves-effect waves-light btn-small" type="submit">Entrar</button><br>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

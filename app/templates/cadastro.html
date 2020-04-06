@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-wrapper">
+      <a class="brand-logo" href="http://127.0.0.1:5000/">Home</a>
+      <ul class="right hide-on-med-and-down" id="nav-mobile">
+        <li><a href="http://127.0.0.1:5000/cadastrar">Cadastro</a></li>
+        <li><a href="http://127.0.0.1:5000/tabela">Tabela</a></li>
+      </ul>
+    </div>
+</nav>
+
+
+
+<div class="row">
+    <form  class="col s12" action="/cadastrar" method="post" >
+            <h2>Cadastro</h2>
+            <div class="col s6">
+
+                <input class="materialize-textarea"  type="text" name="username" id="username" placeholder="Login" required>
+                <input class="materialize-textarea"  type="password" name="password" id="password" placeholder="Senha"  required>
+                <input class="materialize-textarea"  type="email" name="email" id="email" placeholder="Email" required>
+                <input class="materialize-textarea"  type="text" name="nome" id="nome" placeholder="Nome" required><br><br>
+
+                {{ status_cadastro }}<br><br>
+
+                <button class="waves-effect waves-light btn-small" type="submit">Enviar</button>
+            </div>
+    </form>
+</div>
+</body>
+</html>
+
