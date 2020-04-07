@@ -7,7 +7,7 @@ def Home():
     return render_template('index.html')
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['POST'])
 def Login():
     if request.method == 'POST':
         username = request.form['username']
@@ -24,6 +24,8 @@ def Login():
                 return render_template('index.html', status_index=status_index)
         except NameError:
             return NameError
+    else:
+        abort(404)
 
 
 @app.route('/cadastrar', methods=['GET', 'POST'])
@@ -31,7 +33,7 @@ def Cadastro():
     if request.method == 'GET':
         return render_template('cadastro.html')
 
-    if request.method == 'POST':
+    elif request.method == 'POST':
         try:
             username = request.form['username']
             email = request.form['username']
@@ -51,8 +53,8 @@ def Cadastro():
             else:
                 status_cadastro = 'Login ou  Email já cadastrados'
                 return render_template('cadastro.html', status_cadastro=status_cadastro)
-        except :
-            return abort(404)
+        except NameError:
+            return NameError
 
 
 
