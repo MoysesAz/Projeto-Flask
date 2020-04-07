@@ -74,7 +74,7 @@ class Components_in_html(TestCase):
         nav_a = nav[0]
         nav_a = nav_a.select('a')
         list_tr = soup.select('tr')
-        #self.assertEqual(len(list_tr), QUANTIDADE DE LINES NO BD)
+        #self.assertEqual(len(list_tr), QUANTIDADE DE LINES NO BD)AA
         self.assertEqual(len(nav_a), 3)
         self.assertEqual(nav_a[0].string, 'Home')
         self.assertEqual(nav_a[1].string, 'Cadastro')
