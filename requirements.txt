@@ -8,4 +8,5 @@ Werkzeug==1.0.0
 Flask-SQLAlchemy==2.4.1
 Flask-Migrate
 Flask-Script
-
+beautifulsoup4==4.9.0
+requests
