@@ -16,7 +16,7 @@ class Components_in_html(TestCase):
         app.config['TESTING'] = True
 
 
-    def test_home(self):
+    def test_home_components(self):
         response = self.client.get(url_for('Home'))
         html = response.get_data(as_text='True')
         soup = BeautifulSoup(html, "html.parser")
@@ -33,7 +33,7 @@ class Components_in_html(TestCase):
         self.assertEqual(len(buttons), 1)
         self.assertEqual(len(input), 2)
 
-    def test_cadastro(self):
+    def test_cadastro_components(self):
         response = self.client.get(url_for('Cadastro'))
         html = response.get_data(as_text='True')
         soup = BeautifulSoup(html, "html.parser")
@@ -51,7 +51,7 @@ class Components_in_html(TestCase):
         self.assertEqual(len(buttons), 1)
         self.assertEqual(len(input), 4)
 
-    def test_tabela(self):
+    def test_tabela_components(self):
         response = self.client.get(url_for('Tabela'))
         html = response.get_data(as_text='True')
         soup = BeautifulSoup(html, "html.parser")
@@ -65,22 +65,3 @@ class Components_in_html(TestCase):
         self.assertEqual(nav_a[1].string, 'Cadastro')
         self.assertEqual(nav_a[2].string, 'Tabela')
         self.assertEqual(len(nav), 1)
-
-    def test_tabela(self):
-        response = self.client.get(url_for('Tabela'))
-        html = response.get_data(as_text='True')
-        soup = BeautifulSoup(html, "html.parser")
-        nav = soup.select('nav')
-        nav_a = nav[0]
-        nav_a = nav_a.select('a')
-        list_tr = soup.select('tr')
-        #self.assertEqual(len(list_tr), QUANTIDADE DE LINES NO BD)AA
-        self.assertEqual(len(nav_a), 3)
-        self.assertEqual(nav_a[0].string, 'Home')
-        self.assertEqual(nav_a[1].string, 'Cadastro')
-        self.assertEqual(nav_a[2].string, 'Tabela')
-        self.assertEqual(len(nav), 1)
-
-
-
-
